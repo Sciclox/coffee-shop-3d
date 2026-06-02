@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koffee - Café de Especialidad & Experiencia 3D</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Canvas 3D -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M2,21H20V19H2V21M20,8H18V5H20M20,3H4V17A3,3 0 0,0 7,20H15A3,3 0 0,0 18,17V15H20A2,2 0 0,0 22,13V10A2,2 0 0,0 20,8M16,17A1,1 0 0,1 15,18H7A1,1 0 0,1 6,17V5H16V17Z" />
+          </svg>
+          <span>KOFFEE</span>
+        </a>
+        <nav class="nav-menu">
+          <a href="#hero" class="nav-link active">Inicio</a>
+          <a href="#origin" class="nav-link">El Origen</a>
+          <a href="#roast" class="nav-link">El Tueste</a>
+          <a href="#shop" class="nav-link">Nuestra Tienda</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn btn-nav">Comprar Ahora</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Indicador de Scroll -->
+    <div class="scroll-indicator">
+      <div class="mouse-icon">
+        <div class="wheel"></div>
+      </div>
+      <span>Desliza para explorar</span>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="content-wrapper">
+      
+      <!-- HERO SECTION -->
+      <section id="hero" class="section hero-section">
+        <div class="container hero-container">
+          <div class="hero-text">
+            <span class="badge">Café de Especialidad 100% Arábica</span>
+            <h1 class="main-title">El Arte del Café <br><span class="accent-text">Perfecto</span></h1>
+            <p class="description">
+              Cultivado a alturas extremas, seleccionado a mano y tostado a la perfección. Descubre una experiencia sensorial única que redefine tu ritual diario.
+            </p>
+            <div class="cta-group">
+              <a href="#shop" class="btn btn-primary">Ver Catálogo</a>
+              <a href="#origin" class="btn btn-secondary">Conocer Origen</a>
+            </div>
+          </div>
+          <div class="hero-visual-placeholder">
+            <!-- El canvas 3D renderizará la taza aquí de forma flotante -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ORIGIN SECTION -->
+      <section id="origin" class="section origin-section">
+        <div class="container grid-container">
+          <div class="origin-visual-placeholder">
+            <!-- Espacio reservado para que la taza se mueva aquí en desktop -->
+          </div>
+          <div class="origin-text">
+            <span class="badge">Origen Único</span>
+            <h2 class="section-title">Granos con <span class="accent-text">Identidad</span></h2>
+            <p class="description">
+              Colaboramos directamente con agricultores de las regiones montañosas más prestigiosas del mundo. Cada lote cuenta una historia de altitud, clima y pasión.
+            </p>
+            
+            <div class="info-cards">
+              <div class="info-card">
+                <div class="card-icon">🏔️</div>
+                <h3>1,800m Altitud</h3>
+                <p>El aire frío de montaña ralentiza la maduración, concentrando los sabores más complejos.</p>
+              </div>
+              <div class="info-card">
+                <div class="card-icon">🌱</div>
+                <h3>Cosecha Manual</h3>
+                <p>Solo los frutos en su punto óptimo de madurez son seleccionados para despulpar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROAST SECTION -->
+      <section id="roast" class="section roast-section">
+        <div class="container grid-container reverse-desktop">
+          <div class="roast-text">
+            <span class="badge">Tueste Artesanal</span>
+            <h2 class="section-title">Tostado de <span class="accent-text">Precisión</span></h2>
+            <p class="description">
+              El tueste es donde se libera el alma del grano. Nuestro maestro tostador calibra la curva de temperatura al segundo para resaltar notas frutales, achocolatadas o florales específicas.
+            </p>
+            <div class="roast-features">
+              <div class="roast-stat">
+                <div class="stat-num">Medium</div>
+                <p>Tueste medio que preserva la acidez brillante y el cuerpo equilibrado.</p>
+              </div>
+              <div class="roast-stat">
+                <div class="stat-num">100%</div>
+                <p>Trazabilidad garantizada desde la finca hasta tu taza de café.</p>
+              </div>
+            </div>
+          </div>
+          <div class="roast-visual-placeholder">
+            <!-- La taza 3D se colocará aquí vertiendo o girando en esta sección -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SHOP SECTION -->
+      <section id="shop" class="section shop-section">
+        <div class="container">
+          <div class="shop-header">
+            <span class="badge">Nuestra Selección</span>
+            <h2 class="section-title text-center">Lleva la Experiencia a <span class="accent-text">Casa</span></h2>
+            <p class="description text-center max-w-600">
+              Granos frescos recién tostados y molidos a tu elección. Envío directo a tu puerta.
+            </p>
+          </div>
+
+          <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+              <div class="product-image-container">
+                <span class="tag-origin">Colombia</span>
+                <div class="product-circle-bg"></div>
+                <div class="product-img-mockup">☕</div>
+              </div>
+              <div class="product-info">
+                <h3>Andes Sunset</h3>
+                <p class="notes">Notas: Caramelo, cítricos y chocolate con leche</p>
+                <div class="product-footer">
+                  <span class="price">$18.90</span>
+                  <button class="btn btn-sm btn-primary">Agregar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+              <div class="product-image-container">
+                <span class="tag-origin">Etiopía</span>
+                <div class="product-circle-bg"></div>
+                <div class="product-img-mockup">🌸</div>
+              </div>
+              <div class="product-info">
+                <h3>Yirgacheffe Bloom</h3>
+                <p class="notes">Notas: Jazmín, té negro y limón dulce</p>
+                <div class="product-footer">
+                  <span class="price">$21.50</span>
+                  <button class="btn btn-sm btn-primary">Agregar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+              <div class="product-image-container">
+                <span class="tag-origin">Edición Limitada</span>
+                <div class="product-circle-bg"></div>
+                <div class="product-img-mockup">✨</div>
+              </div>
+              <div class="product-info">
+                <h3>Geisha Reserva</h3>
+                <p class="notes">Notas: Bergamota, melocotón y flor de café</p>
+                <div class="product-footer">
+                  <span class="price">$34.00</span>
+                  <button class="btn btn-sm btn-primary">Agregar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <h3>KOFFEE</h3>
+          <p>Café de especialidad con conciencia social y ambiental.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explorar</h4>
+          <a href="#hero">Inicio</a>
+          <a href="#origin">El Origen</a>
+          <a href="#roast">El Tueste</a>
+          <a href="#shop">Tienda</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contacto</h4>
+          <p>hola@koffee-3d.com</p>
+          <p>Av. Aromas de Café 101, Lima</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 KOFFEE. Todos los derechos reservados. Diseñado con Three.js & GSAP.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
